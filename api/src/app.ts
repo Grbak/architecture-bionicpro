@@ -9,12 +9,12 @@ import errorHandler from './middlewares/errorHandler';
 
 const memoryStore = new session.MemoryStore();
 const keycloakConfig = {
-  realm: 'reports-realm',
-  'bearer-only': true,
-  'auth-server-url': 'http://localhost:8080/',
-  'ssl-required': 'external',
-  'resource': 'reports-api',
-  'confidential-port': 0
+  realm: String(process.env.REALM),
+  'bearer-only': Boolean(process.env.BEARER_ONLY),
+  'auth-server-url': String(process.env.AUTH_SERVER_URL),
+  'ssl-required': String(process.env.SSL_REQUIRED),
+  'resource': String(process.env.RESOURCE),
+  'confidential-port': Number(process.env.CONFIDENTIAL_PORT)
 };
 
 const keycloak = new Keycloak({ store: memoryStore }, keycloakConfig);
