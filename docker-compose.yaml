@@ -51,7 +51,7 @@ services:
       FRONTEND_HOST: http://localhost:3000
       REALM: reports-realm
       BEARER_ONLY: true
-      AUTH_SERVER_URL: http://localhost:8080/
+      AUTH_SERVER_URL: http://keycloak:8080/
       SSL_REQUIRED: external
       RESOURCE: reports-api
       CONFIDENTIAL_PORT: 0
